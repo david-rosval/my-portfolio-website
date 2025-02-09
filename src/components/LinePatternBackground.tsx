@@ -10,8 +10,8 @@ export default function LinePatternBackground() {
         <defs>
           <pattern
             id="pattern"
-            width="3"
-            height="3"
+            width="4"
+            height="4"
             patternUnits="userSpaceOnUse"
             patternTransform="rotate(45)"
           >

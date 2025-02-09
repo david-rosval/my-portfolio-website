@@ -1,8 +1,8 @@
 
 export default function ContactMeButton() {
   return (
-    <button className="bg-palette-1 px-4 py-1 rounded-full text-white text-lg font-semibold border border-palette-4">
+    <a href="mailto:rosadovalerio.d@gmail.com" className="bg-palette-1 px-5 py-2 rounded-full text-white text-xl font-semibold border border-palette-4">
       Contáctame
-    </button>
+    </a>
   )
 }
