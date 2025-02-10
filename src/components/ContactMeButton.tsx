@@ -1,5 +1,5 @@
-import LinkedIn from "./svg/Linkedin";
 import { motion } from "motion/react"
+import LinkedIn from "./svg/Linkedin"
 
 export default function ContactMeButton() {
   return (
