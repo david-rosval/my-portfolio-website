@@ -1,10 +1,11 @@
 import ContactMeButton from './ContactMeButton'
 import ProfilePhoto from './ProfilePhoto'
 import { motion } from "motion/react"
+import SlideAnimated from './SlideAnimated'
 
 export default function Hero() {
   return (
-    <div className='bg-gradient-to-b from-palette-3 to-palette-1 h-dvh flex justify-center lg:items-center lg:p-0 p-5 pt-16'>
+    <div className='bg-gradient-to-b from-palette-2 to-palette-1 h-dvh flex justify-center md:items-center md:p-0 p-5 pt-10 relative'>
       <div className='flex flex-col lg:flex-row gap-8 items-center'>
         <ProfilePhoto />
         <div
@@ -56,6 +57,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <SlideAnimated />
     </div>
   )
 }

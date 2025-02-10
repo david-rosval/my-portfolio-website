@@ -7,12 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'palette-1': '#1a545d',
-        'palette-2': '#4e9a8d',
-        'palette-3': '#153548',
-        'palette-4': '#9ae8b7',
-        'palette-5': '#605056',
-        'palette-6': '#817063',
+        'palette-1': '#213363',
+        'palette-2': '#17594A',
+        'palette-3': '#8EAC50',
+        'palette-4': '#D3D04F',
       },
     },
   },
