@@ -1,5 +1,4 @@
 import { motion } from "motion/react"
-import LinkedIn from "./svg/Linkedin"
 
 export default function ContactMeButton() {
   return (
@@ -16,7 +15,6 @@ export default function ContactMeButton() {
       href="mailto:rosadovalerio.d@gmail.com" 
       className="bg-palette-1 px-5 py-2 rounded-full text-white text-2xl font-semibold border border-palette-4 flex gap-3 items-center"
     >
-      <LinkedIn />
       Contáctame
     </motion.a>
   )
