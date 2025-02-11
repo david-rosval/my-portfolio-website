@@ -5,7 +5,7 @@ import SlideAnimated from './SlideAnimated'
 
 export default function Hero() {
   return (
-    <div className='bg-gradient-to-b from-palette-2 to-palette-1 h-dvh flex justify-center md:items-center md:p-0 p-5 pt-5 relative'>
+    <div className='h-dvh flex justify-center lg:items-center md:p-0 p-5 pt-5 md:pt-10 relative'>
       <div className='flex flex-col lg:flex-row gap-8 items-center'>
         <ProfilePhoto />
         <div

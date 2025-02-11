@@ -8,3 +8,12 @@
   --palette-3: "#205295";
   --palette-4: "#2C74B3";
 }
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    autofit,
+    minmax(100px, 1fr)
+  );
+  gap: 5px;
+}

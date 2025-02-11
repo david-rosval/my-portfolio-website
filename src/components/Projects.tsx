@@ -1,27 +1,55 @@
-import { SquareArrowOutUpRight } from "lucide-react"
-import { projects } from "../consts"
+import { Code, SquareArrowOutUpRight } from "lucide-react"
 import Expressjs from "./svg/Express"
 import Nextjs from "./svg/Nextjs"
-import React from "./svg/React"
-import Remix from "./svg/Remix"
+import { motion } from "motion/react"
 import GoToGithubButton from "./GoToGithubButton"
+import Socketio from "./svg/SocketIo"
+import MongoDB from "./svg/MongoDB"
+import Remix from "./svg/Remix"
+import Prisma from "./svg/Prisma"
+import { useState } from "react"
+import LinePatternProject from "./svg/LinePatternProject"
 
+const  project1 = {
+  title: "Gestor de pedidos para restobar Villa 29",
+  description: "Sitio web de comunicación en tiempo real entre el área de atención al cliente (mozos) y cocina. Cuenta con un dashboard para la administración de las ganancias.",
+  technologies: ["Nextjs", "Expressjs", "Socket.io", "MongoDB"],
+  image: "/villa29.webp",
+  github: "https://github.com/david-rosval/villa29-inventario-y-cocina-frontend-nextjs.git",
+  site: "http://localhost:5173"
+}
+
+const project2 = {
+  title: "Week Planner",
+  description: "Aplicación web de creación de actividades y hábitos semanales. Cuenta con un sistema de autenticación y una base de datos para guardar los eventos.",
+  technologies: ["Remix", "MongoDB", "Prisma"],
+  image: "/weekplanner.webp",
+  github: "https://github.com/david-rosval/villa29-inventario-y-cocina-frontend-nextjs.git",
+  site: "http://localhost:5173"
+}
 
 export default function Projects() {
   return (
-    <div className="flex gap-5 mx-auto  h-[500px] max-w-[1300px]">
-      {/* Div con texto rotado */}
-      <div className="flex items-center justify-center w-32">
-        <h2 className="-rotate-90 whitespace-nowrap text-8xl uppercase font-bold text-palette-2 ">Projects</h2>
+    <div className="px-5 pb-10 pt-16">
+      <h2 className="text-6xl text-center uppercase text-palette-4 font-bold">Proyectos</h2>
+      <div className="flex justify-around items-center gap-2 my-5 mx-16">
+        <div className="w-full border-t-2  border-palette-4 border-dashed" />
+        <Code className="stroke-palette-4 size-12" />
+        <div className="w-full border-t-2  border-palette-4 border-dashed" />
       </div>
-
       {/* Div que ocupa el espacio restante */}
-      <div className="flex-1 p-4 flex items-center">
-        <div className="h-full grid grid-cols-3 gap-4">
-          {projects.map((project, i) =>(
-            <Project key={i} project={project} />
-          ))}
-        </div>
+      <div className="grid lg:grid-cols-2 gap-8">
+        <Project project={project2}>
+          <Remix />
+          <Prisma />
+          <MongoDB />
+        </Project>
+        <Project project={project1}>
+          <Nextjs />
+          <Expressjs />
+          <Socketio />
+          <MongoDB />
+        </Project>
       </div>
     </div>
   )
@@ -36,7 +64,7 @@ type ProjectType = {
   site: string
 }
 
-function Project({ project }: { project: ProjectType }) {
+function Project({ project, children }: { project: ProjectType, children: React.ReactNode }) {
   const {
     title,
     description,
@@ -44,43 +72,62 @@ function Project({ project }: { project: ProjectType }) {
     github,
     site
   } = project
+
+  const [titleHover, setTitleHover] = useState<boolean>(false)
+
+  
+
   return (
-    <div className="h-full bg-palette-3 rounded-xl  overflow-hidden text-white">
-      <div className={`w-full h-40 bg-[url(${image})]`}>
-      </div>
-      <div className="h-full p-4 flex flex-col gap-3">
-
-        <div className="flex">
-          <a href={site} className="hover:underline underline-offset-4 decoration-palette-4 flex gap-2 items-center">
-            <h3 className="text-xl font-bold text-palette-4">
-              {title}
-            </h3>
-            <SquareArrowOutUpRight className="size-5 stroke-palette-4" />
-          </a>
-        </div>
-
-        <p>{description}</p>
-
-        <ul className="flex gap-3 items-center">
-          <li>
-            <Nextjs className="size-7" />
-          </li>
-          <li>
-            <Remix className="size-5" />
-          </li>
-          <li>
-            <React className="size-7" />
-          </li>
-          <li>
-            <Expressjs className="size-7" />
-          </li>
-        </ul>
-
-        <div className="flex justify-end items-end ">
-          <GoToGithubButton url={github} />
-        </div>
+    <div className="relative max-w-[500px] mx-auto">
+      <LinePatternProject />
+      <div className=" text-white p-5 flex flex-col  border-2 border-palette-3 bg-palette-1 relative z-10 mr-3">
         
+        <div className="h-48 overflow-hidden z-10">
+          <img src={image} alt={title} className="w-full h-full object-cover object-center transition-transform hover:scale-105 duration-300" />
+        </div>
+        <div className="flex-1 pt-5 flex flex-col gap-4 z-10">
+
+          <div className="flex">
+            <a 
+              href={site} 
+              onMouseEnter={() => setTitleHover(true)}
+              onMouseLeave={() => setTitleHover(false)}
+              className=" flex gap-2 items-center relative"
+            >
+              <h3 className="text-xl font-bold text-palette-4 flex items-center gap-2 hover:underline underline-offset-4 decoration-palette-4">
+                <p className="max-w-72 truncate">
+                  {title}
+                </p>
+                <SquareArrowOutUpRight className="size-5 stroke-palette-4" />
+              </h3>
+              <motion.div 
+                animate={{
+                  scale: titleHover ? 1 : 0,
+                  transition: {
+                    delay: 0.5,
+                  }
+                }}
+                className="absolute right-0 bg-palette-2 text-center text-white px-2 py-1 rounded-2xl -top-10 inset-x-0 "
+                
+              >
+                {title}
+              </motion.div>
+            </a>
+          </div>
+
+          <p>{description}</p>
+
+          <div className="flex gap-3 items-center mt-3">
+            {children}
+          </div> 
+
+          <div className="flex justify-end items-end mt-5 h-full">
+            <GoToGithubButton url={github} />
+          </div>
+          
+        </div>
       </div>
     </div>
+
   )
 }

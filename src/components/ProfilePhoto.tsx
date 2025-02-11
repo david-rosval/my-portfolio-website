@@ -19,7 +19,7 @@ export default function ProfilePhoto() {
       
       className="size-80  rounded-full overflow-hidden flex justify-center items-center relative"
     >
-      <img className="w-56 h-80 object-cover object-[0%_-120%] z-10" src="/profile.webp" alt="profile" />
+      <img className="w-56 h-80 object-cover object-[0%_-120%] z-10 grayscale" src="/profile.webp" alt="profile" />
       <div className="absolute size-64 rounded-full p-3 flex justify-center items-center  overflow-hidden">
         <LinePatternBackground />
       </div>
