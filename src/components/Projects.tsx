@@ -8,7 +8,7 @@ import Remix from "./svg/Remix"
 import Prisma from "./svg/Prisma"
 import { useState } from "react"
 import LinePatternProject from "./svg/LinePatternProject"
-import SocketIo from "./svg/SocketIo"
+import SocketIo from "./svg/Socketio"
 
 const  project1 = {
   title: "Gestor de pedidos para restobar Villa 29",
