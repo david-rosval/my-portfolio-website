@@ -7,6 +7,11 @@ export default function ContactMeButton() {
   const [buttonHover, setButtonHover] = useState<boolean>(false)
 
   const buttonAnimations = {
+    initial: { 
+      borderColor: "#E1FFBB",
+      backgroundColor: 'transparent',
+      color: 'white',
+    },
     hover: { 
       borderColor: "transparent",
       backgroundColor: '#E1FFBB',
@@ -30,8 +35,9 @@ export default function ContactMeButton() {
         }}
       >
         <motion.button 
-          whileHover={'hover'}
+          animate={buttonHover ? 'hover' : 'initial'}
           variants={buttonAnimations}
+          transition={{ duration: 1.2, type: 'spring', bounce: 0.5 }}
           className="px-5 py-2 rounded-full text-white text-lg md:text-2xl font-semibold border border-palette-4 flex gap-3 items-center"
           onMouseEnter={() => setButtonHover(true)}
           onMouseLeave={() => setButtonHover(false)}
@@ -43,7 +49,6 @@ export default function ContactMeButton() {
       <motion.div 
         animate={{
           scale: buttonHover ? 1 : 0,
-          
         }}
         className="absolute -b-2 w-full flex"
         onMouseEnter={() => setButtonHover(true)}

@@ -50,7 +50,7 @@ export default function Hero() {
                 }
               }}
               className='text-white/80 text-lg md:text-2xl pt-5 '
-            >Desarrollador Web <span className='text-palette-3 font-semibold md:inline-block block'>Full Stack</span></motion.p>
+            >Desarrollador Web <span className='text-palette-3 font-semibold md:inline-block block italic'>Full Stack</span></motion.p>
           </h1>
           <div className='flex justify-center lg:mt-0 mt-5 lg:justify-start'>
             <ContactMeButton />
