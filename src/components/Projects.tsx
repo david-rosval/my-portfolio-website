@@ -9,6 +9,8 @@ import Prisma from "./svg/Prisma"
 import { useState } from "react"
 import LinePatternProject from "./svg/LinePatternProject"
 import SocketIo from "./svg/Socketio"
+import Section from "./Section"
+import MySQL from "./svg/MySQL"
 
 const  project1 = {
   title: "Gestor de pedidos para restobar Villa 29",
@@ -30,14 +32,7 @@ const project2 = {
 
 export default function Projects() {
   return (
-    <div className="px-5 py-10">
-      <h2 className="text-6xl text-center uppercase text-palette-4 font-bold">Proyectos</h2>
-      <div className="flex justify-around items-center gap-2 my-5 mx-16">
-        <div className="w-full border-t-2  border-palette-4 border-dashed" />
-        <Code className="stroke-palette-4 size-12" />
-        <div className="w-full border-t-2  border-palette-4 border-dashed" />
-      </div>
-      {/* Div que ocupa el espacio restante */}
+    <Section icon={<Code className="stroke-palette-4 size-12" />} title="Proyectos">
       <div className="grid lg:grid-cols-2 gap-8">
         <Project project={project2}>
           <Remix />
@@ -49,9 +44,10 @@ export default function Projects() {
           <Expressjs />
           <SocketIo />
           <MongoDB />
+          <MySQL />
         </Project>
       </div>
-    </div>
+    </Section>
   )
 }
 
@@ -94,7 +90,7 @@ function Project({ project, children }: { project: ProjectType, children: React.
               onMouseLeave={() => setTitleHover(false)}
               className=" flex gap-2 items-center relative"
             >
-              <h3 className="text-xl font-bold text-palette-4 flex items-center gap-2 hover:underline underline-offset-4 decoration-palette-4">
+              <h3 className="text-2xl font-bold text-palette-4 flex items-center gap-2 hover:underline underline-offset-4 decoration-palette-4">
                 <p className="max-w-72 truncate">
                   {title}
                 </p>

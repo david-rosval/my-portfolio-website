@@ -18,8 +18,15 @@ export default function SlideAnimated() {
         }}
         className='absolute bottom-0 mx-auto flex flex-col items-center justify-center  gap-1 pb-3 mb-2'
       >
-        <p className='text-white hidden lg:block'>Proyectos</p>
         <motion.div
+            animate={{
+            y: [0, -10, 0],
+            transition: {
+              duration: 3,
+              repeat: Infinity,
+              repeatType: "loop"
+            }
+            }}
         >
           <ChevronDown className='size-10 stroke-white' />
         </motion.div>

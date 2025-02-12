@@ -1,7 +1,7 @@
 
 export default function LinePatternProject() {
   return (
-    <div className="size-full absolute -bottom-3 overflow-hidden">
+    <div className="size-full absolute -bottom-3 -right-0 overflow-hidden max-w-[488px]">
       <svg
         width="100%"
         height="100%"
