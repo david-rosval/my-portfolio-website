@@ -3,7 +3,7 @@ export default function LinePatternBackground() {
   return (
     <div className="">
       <svg
-        className="w-96 h-96 stroke-palette-3"
+        className="size-72 md:size-96 stroke-palette-3"
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
       >

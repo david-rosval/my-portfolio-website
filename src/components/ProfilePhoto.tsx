@@ -17,10 +17,10 @@ export default function ProfilePhoto() {
         }
       }}
       
-      className="size-80  rounded-full overflow-hidden flex justify-center items-center relative"
+      className="md:size-80 size-64 rounded-full overflow-hidden flex justify-center items-center relative"
     >
-      <img className="w-56 h-80 object-cover object-[0%_-120%] z-10 " src="/profile.webp" alt="profile" />
-      <div className="absolute size-64 rounded-full p-3 flex justify-center items-center  overflow-hidden">
+      <img className="md:w-56 md:h-80 w-48 h-64 object-cover md:object-[0%_-120%] object-[0%_-60%] z-10 " src="/profile.webp" alt="profile" />
+      <div className="absolute md:size-64 size-52 rounded-full p-3 flex justify-center items-center  overflow-hidden">
         <LinePatternBackground />
       </div>
     </motion.div>

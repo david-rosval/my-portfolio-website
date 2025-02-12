@@ -11,6 +11,7 @@ import LinePatternProject from "./svg/LinePatternProject"
 import SocketIo from "./svg/Socketio"
 import Section from "./Section"
 import MySQL from "./svg/MySQL"
+import Clerk from "./svg/Clerk"
 
 const  project1 = {
   title: "Gestor de pedidos para restobar Villa 29",
@@ -26,7 +27,7 @@ const project2 = {
   description: "Aplicación web de creación de actividades y hábitos semanales. Cuenta con un sistema de autenticación y una base de datos para guardar los eventos.",
   technologies: ["Remix", "MongoDB", "Prisma"],
   image: "/weekplanner.webp",
-  github: "https://github.com/david-rosval/villa29-inventario-y-cocina-frontend-nextjs.git",
+  github: "https://github.com/david-rosval/week-planner.git",
   site: "http://localhost:5173"
 }
 
@@ -36,15 +37,16 @@ export default function Projects() {
       <div className="grid lg:grid-cols-2 gap-8">
         <Project project={project2}>
           <Remix />
-          <Prisma />
-          <MongoDB />
+          <Prisma className="h-5" />
+          <MongoDB className="h-5" />
+          <Clerk className="w-12" />
         </Project>
         <Project project={project1}>
-          <Nextjs />
-          <Expressjs />
-          <SocketIo />
-          <MongoDB />
-          <MySQL />
+          <Nextjs className="size-5" />
+          <Expressjs className="size-5" />
+          <SocketIo className="size-5" />
+          <MongoDB className="size-5" />
+          <MySQL className="size-5" />
         </Project>
       </div>
     </Section>

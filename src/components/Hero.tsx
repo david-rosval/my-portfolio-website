@@ -23,7 +23,7 @@ export default function Hero() {
                 y: 0,
                 transition: { delay: 0.4 }
               }}
-              className='text-white text-2xl md:text-4xl'>Hola, <span className='text-palette-4'
+              className='text-white text-2xl md:text-4xl font-semibold'>Hola, <span className='text-palette-4'
             >soy</span></motion.p>
             <motion.p 
               initial={{
@@ -49,10 +49,10 @@ export default function Hero() {
                   delay: 0.8
                 }
               }}
-              className='text-white text-xl md:text-2xl pt-5 lg:w-full w-48'
-            >Desarrollador Web Full Stack</motion.p>
+              className='text-white/80 text-lg md:text-2xl pt-5 '
+            >Desarrollador Web <span className='text-palette-3 font-semibold md:inline-block block'>Full Stack</span></motion.p>
           </h1>
-          <div className='flex justify-center lg:mt-0 mt-3 lg:justify-start'>
+          <div className='flex justify-center lg:mt-0 mt-5 lg:justify-start'>
             <ContactMeButton />
           </div>
         </div>
