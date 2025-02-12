@@ -3,12 +3,12 @@ import Expressjs from "./svg/Express"
 import Nextjs from "./svg/Nextjs"
 import { motion } from "motion/react"
 import GoToGithubButton from "./GoToGithubButton"
-import Socketio from "./svg/SocketIo"
 import MongoDB from "./svg/MongoDB"
 import Remix from "./svg/Remix"
 import Prisma from "./svg/Prisma"
 import { useState } from "react"
 import LinePatternProject from "./svg/LinePatternProject"
+import SocketIo from "./svg/SocketIo"
 
 const  project1 = {
   title: "Gestor de pedidos para restobar Villa 29",
@@ -47,7 +47,7 @@ export default function Projects() {
         <Project project={project1}>
           <Nextjs />
           <Expressjs />
-          <Socketio />
+          <SocketIo />
           <MongoDB />
         </Project>
       </div>
