@@ -1,6 +1,6 @@
-import AboutMe from "./components/AboutMe"
-import Hero from "./components/Hero"
-import Projects from "./components/Projects"
+import AboutMe from "./components/aboutme/AboutMe"
+import Hero from "./components/hero/Hero"
+import Projects from "./components/projects/Projects"
 
 
 function App() {

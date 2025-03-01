@@ -1,10 +1,10 @@
 import { Smile } from "lucide-react";
-import Section from "./Section";
+import Section from "../projects/Section";
 import HighLightedText from "./HighLightedText";
-import React from "./svg/React";
-import Nextjs from "./svg/Nextjs";
-import Remix from "./svg/Remix";
-import TechTextWithLogo from "./svg/TechTextWithLogo";
+import React from "../svg/React";
+import Nextjs from "../svg/Nextjs";
+import Remix from "../svg/Remix";
+import TechTextWithLogo from "../svg/TechTextWithLogo";
 
 export default function AboutMe() {
   return (

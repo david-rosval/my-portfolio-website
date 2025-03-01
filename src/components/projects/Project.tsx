@@ -1,5 +1,5 @@
 import { useState } from "react"
-import LinePatternProject from "./svg/LinePatternProject"
+import LinePatternProject from "../svg/LinePatternProject"
 import { SquareArrowOutUpRight } from "lucide-react"
 import { motion } from "motion/react"
 import GoToGithubButton from "./GoToGithubButton"

@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import Github from './svg/Github'
+import Github from '../svg/Github'
 import { useState } from "react"
 
 export default function GoToGithubButton({ url }: { url: string }) {

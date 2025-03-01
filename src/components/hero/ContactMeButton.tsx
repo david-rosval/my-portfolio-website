@@ -1,6 +1,6 @@
 import { motion } from "motion/react"
 import { useState } from "react"
-import LinkedIn from "./svg/LinkedIn"
+import LinkedIn from "../svg/LinkedIn"
 import { Mail } from "lucide-react"
 
 export default function ContactMeButton() {
