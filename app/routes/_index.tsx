@@ -1,7 +1,16 @@
-import AboutMe from "./components/aboutme/AboutMe"
-import Hero from "./components/hero/Hero"
-import Projects from "./components/projects/Projects"
+import type { MetaFunction } from "@remix-run/node";
+import AboutMe from "~/components/aboutme/AboutMe";
+import Hero from "~/components/hero/Hero";
+import Projects from "~/components/projects/Projects";
 
+
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "New Remix App" },
+    { name: "description", content: "Welcome to Remix!" },
+  ];
+};
 
 function App() {
 
