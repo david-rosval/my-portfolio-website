@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
 html,
 body {
   @apply text-gray-800 bg-gray-100 dark:text-white dark:bg-gray-800;
-
+  
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
 }
 
+.transformOrigin {
+  transform-origin: 0px 30vw;
+}
+
+@media (min-width: 1024px) {
+  .transformOrigin {
+    transform-origin: 0px 8rem;
+  }
+}

@@ -24,7 +24,7 @@ export default function NavBar() {
 
   return (
     <motion.div 
-      className="w-full min-h-14 fixed top-0 flex justify-center gap-2 md:gap-0 items-center backdrop-blur-lg"
+      className="w-full min-h-14 z-30 fixed top-0 flex justify-center gap-2 md:gap-0 items-center backdrop-blur-lg"
       initial={{ top: -30, opacity: 0 }}
       animate={{ top: 0, opacity: 1, transition: { delay: 0.8, duration: 0.3 } }}
     >
@@ -54,7 +54,7 @@ export default function NavBar() {
         ))}
       </nav>
 
-      <button onClick={toggleLanguage} className="md:absolute left-0 m-0 md:m-2 flex p-2 border dark:border-gray-600 rounded-lg shadow-md">
+      <button onClick={toggleLanguage} className="md:absolute left-0 m-0 md:m-2 flex p-2 border dark:border-gray-600 rounded-lg shadow-md hover:bg-gray-500/5 transition-colors duration-200 ease-in-out">
         <Languages />
       </button>
 
