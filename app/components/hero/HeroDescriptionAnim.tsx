@@ -17,7 +17,7 @@ export default function HeroDescriptionAnim({
   setDescriptionAnim: React.Dispatch<SetStateAction<boolean>>
 }) {
   return (
-    <motion.p className="text-center lg:text-left text-[3.5vw] lg:text-lg opacity-85 max-w-[77vw] lg:max-w-[500px]">
+    <motion.p className="text-center md:text-left text-[3.5vw] md:text-lg opacity-85 max-w-[77vw] md:max-w-[500px]">
       {description[languageIndex].split("").map((char, index) => (
         <motion.span 
           key={index}
@@ -34,7 +34,7 @@ export default function HeroDescriptionAnim({
         </motion.span>
       ))}
       {" "}
-      <MotionMoonFace className={clsx("inline-block size-[5.5vw] lg:size-[28px] transition-all ease-in-out duration-300", descriptionAnim ? "opacity-100 scale-100" : "opacity-0 scale-0" )} />
+      <MotionMoonFace className={clsx("inline-block size-[5.5vw] md:size-[28px] transition-all ease-in-out duration-300", descriptionAnim ? "opacity-100 scale-100" : "opacity-0 scale-0" )} />
     </motion.p>
   )
 }

@@ -15,9 +15,15 @@ body {
 .transformOrigin {
   transform-origin: 0px 30vw;
 }
-
-@media (min-width: 1024px) {
+ 
+@media (min-width: 768px) { /* md */
   .transformOrigin {
-    transform-origin: 0px 8rem;
+    transform-origin: 0px 9rem;
+  }
+}
+
+@media (min-width: 1024px) { /* lg */
+  .transformOrigin {
+    transform-origin: 0px 12rem;
   }
 }

@@ -43,14 +43,14 @@ export default function ContactMeBtn({ languageIndex }: { languageIndex: 0 | 1 }
       animate={{ opacity: 1, scale: 1, transition: { duration: 0.3}}}
     >
       <motion.button 
-        className={clsx("border dark:border-gray-600 py-[3vw] lg:py-[16px] px-[6vw] lg:px-[32px] rounded-lg shadow-lg text-[4vw] lg:text-[21.3px] flex gap-[4vw] lg:gap-[21.3px]  items-center transition-colors duration-300 ease-in-out")}
+        className={clsx("border dark:border-gray-600 py-[3vw] md:py-[16px] px-[6vw] md:px-[32px] rounded-lg shadow-lg text-[4vw] md:text-[21.3px] flex gap-[4vw] md:gap-[21.3px]  items-center transition-colors duration-300 ease-in-out")}
         onClick={() => setClicked(!clicked)}
         whileTap={{ scale: 0.98 }}
         layout
       >
         {contactMe[languageIndex]}
         <MotionSendHorizonal 
-          className="inline-block size-[5vw] lg:size-[26.6px] stroke-gray-800 dark:stroke-white" 
+          className="inline-block size-[5vw] md:size-[26.6px] stroke-gray-800 dark:stroke-white" 
           animate={{ rotate: clicked ? "-45deg" : 0, stroke: clicked ? "#60a5fa" : "" }}
         />
       </motion.button>
@@ -85,13 +85,13 @@ const ContactMeLink = ({
             to={contactMeLink.to} 
             rel="noreferrer" 
             target="_blank"
-            className=" flex justify-center items-center size-[11.5vw] lg:size-[61.3px] rounded-full border shadow-lg dark:border-gray-600 ml-[2.5vw] lg:ml-[13.3px] relative"
+            className=" flex justify-center items-center size-[11.5vw] md:size-[61.3px] rounded-full border shadow-lg dark:border-gray-600 ml-[2.5vw] md:ml-[13.3px] relative"
             whileHover={{ top: -5 }}
             whileTap={{ top: -1 }}
             onClick={() => setClicked(false)}
           >
-            {contactMeLink.platform === "linkedin" && <LinkedIn className="size-[5.5vw] lg:size-[29.3px]" />}
-            {contactMeLink.platform === "gmail" && <Gmail className="size-[5.5vw] lg:size-[29.3px]" />}
+            {contactMeLink.platform === "linkedin" && <LinkedIn className="size-[5.5vw] md:size-[29.3px]" />}
+            {contactMeLink.platform === "gmail" && <Gmail className="size-[5.5vw] md:size-[29.3px]" />}
           </MotionLink>
         </motion.div>
       )}
