@@ -10,7 +10,7 @@ export default function ContactMeButton() {
     initial: { 
       borderColor: "#E1FFBB",
       backgroundColor: 'transparent',
-      color: 'white',
+      color: '#222',
     },
     hover: { 
       borderColor: "transparent",
@@ -38,7 +38,7 @@ export default function ContactMeButton() {
           animate={buttonHover ? 'hover' : 'initial'}
           variants={buttonAnimations}
           transition={{ duration: 1.2, type: 'spring', bounce: 0.5 }}
-          className="px-5 py-2 rounded-full text-white text-lg md:text-2xl font-semibold border border-palette-4 flex gap-3 items-center"
+          className="px-5 py-2 rounded-full text-gray-800 dark:text-white text-lg md:text-2xl font-semibold border border-palette-4 flex gap-3 items-center"
           onMouseEnter={() => setButtonHover(true)}
           onMouseLeave={() => setButtonHover(false)}
         >

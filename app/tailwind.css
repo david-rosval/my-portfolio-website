@@ -4,9 +4,10 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply text-gray-800 bg-gray-100 dark:text-white dark:bg-gray-800;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
 }
+

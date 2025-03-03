@@ -1,34 +1,34 @@
 import type { MetaFunction } from "@remix-run/node";
-import AboutMe from "~/components/aboutme/AboutMe";
+import HeroAlter from "~/components/hero/HeroAlter";
+/* import AboutMe from "~/components/aboutme/AboutMe";
 import Hero from "~/components/hero/Hero";
-import Projects from "~/components/projects/Projects";
-
-
+import Projects from "~/components/projects/Projects"; */
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "David Rosado Valerio" },
+    { name: "description", content: "Welcome to my Portfolio!" },
   ];
 };
 
-function App() {
-
+function Index() {
   return (
-    <>
-      <div className="bg-gradient-to-b from-palette-2 to-palette-1">
-        <div className="max-w-[1300px] mx-auto">
-          <Hero />
-        </div>
+    <div className="w-full h-full">
+      <HeroAlter />
+    </div>
+    /* <div className="bg-gradient-to-b from-palette-2 to-palette-1">
+      <div className="max-w-[1300px] mx-auto">
+        <Hero />
+        <p className="text-red-700 dark:text-yellow-300">probando</p>
       </div>
-      <div className="bg-palette-1">
-        <div className="max-w-[1200px] mx-auto">
-          <Projects />
-          <AboutMe />
-        </div>
+    </div>
+    <div className="bg-palette-1">
+      <div className="max-w-[1200px] mx-auto">
+        <Projects />
+        <AboutMe />
       </div>
-    </>
+    </div> */
   )
 }
 
-export default App
+export default Index

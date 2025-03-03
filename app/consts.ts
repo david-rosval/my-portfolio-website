@@ -1,9 +1,17 @@
 
 
-export const heroText = {
-  en: ["Hi", "I'm", "Web Developer", "Contact me"],
-  es: ["Hola", "soy", "Desarrollador Web"]
-}
+export const heroText = [
+  ["Hola", "soy", "Desarrollador Web"],
+  ["Hi", "I'm", "Web Developer", "Contact me"],
+
+]
+
+
+export const navBarLinks = [
+  { name: ["Portafolio", "Portfolio"], to: "/" },
+  { name: ["Acerca de mí", "About me"], to: "/" },
+  { name: ["Contáctame", "Get in touch"], to: "/" },
+]
 
 
 export const projects = [
