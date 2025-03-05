@@ -5,7 +5,7 @@
 
 html,
 body {
-  @apply text-gray-800 bg-gray-100 dark:text-white dark:bg-gray-800;
+  @apply text-slate-800 bg-slate-100 dark:text-white dark:bg-slate-800;
   
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -26,4 +26,48 @@ body {
   .transformOrigin {
     transform-origin: 0px 12rem;
   }
+}
+
+.bg-profile-dots {
+  background-image: radial-gradient(
+    #3b82f6 0.44vw,
+    transparent 0.44vw
+  );
+  background-size: 2.242vw 2.242vw;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-profile-dots {
+    background-image: radial-gradient(
+      #60a5fa 0.44vw,
+      transparent 0.44vw
+    );
+    background-size: 2.242vw 2.242vw;
+  }
+}
+
+@media (min-width: 768px) { /* md */
+  .bg-profile-dots {
+    background-image: radial-gradient(
+      #3b82f6 2.16px,
+      transparent 2.16px
+    );
+    background-size: 12.55px 12.55px;
+  }
+}
+@media (min-width: 1024px) { /* lg */
+  .bg-profile-dots {
+    background-image: radial-gradient(
+      #3b82f6 2.25px,
+      transparent 2.25px
+    );
+    background-size: 15px 15px;
+  }
+}
+
+.image-b-transparent-gradient {
+  mask: linear-gradient(#000, transparent)
+}
+.image-t-transparent-gradient {
+  mask: linear-gradient(transparent, #000)
 }

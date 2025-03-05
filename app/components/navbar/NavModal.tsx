@@ -28,7 +28,7 @@ export default function NavModal() {
   return (
     <>
       <button 
-        className="border rounded-lg dark:border-gray-600 hover:bg-gray-500/5 transition-colors duration-200 ease-in-out p-2 flex md:hidden justify-center shadow-md"
+        className="border rounded-lg dark:border-slate-600 hover:bg-slate-500/5 transition-colors duration-200 ease-in-out p-2 flex md:hidden justify-center shadow-md"
         onMouseDown={() => setModal(!modal)}
       >
         <AnimatePresence mode="wait">
@@ -84,7 +84,7 @@ const MenuDialog = ({ modal, setModal }: { modal: boolean, setModal: React.Dispa
           >
             <Link 
               to={navBarLink.to}
-              className="text-xs flex flex-col gap-1 items-center border dark:border-gray-500 rounded-xl p-2 shadow-md bg-white dark:bg-gray-800"
+              className="text-xs flex flex-col gap-1 items-center border dark:border-slate-500 rounded-xl p-2 shadow-md bg-white dark:bg-slate-800"
             >
               <NavLinkIcon navBarLink={navBarLink.name[1]} />
               <span className="text-wrap">
@@ -100,11 +100,11 @@ const MenuDialog = ({ modal, setModal }: { modal: boolean, setModal: React.Dispa
 const NavLinkIcon = ({ navBarLink }: { navBarLink: string }) => {
   switch (navBarLink) {
     case "About me":
-      return <Laugh className="size-8 stroke-gray-700 dark:stroke-gray-300" />
+      return <Laugh className="size-8 stroke-slate-700 dark:stroke-slate-300" />
     case "Portfolio": 
-      return <BookOpenText className="size-8 stroke-gray-700 dark:stroke-gray-300" />
+      return <BookOpenText className="size-8 stroke-slate-700 dark:stroke-slate-300" />
     case "Get in touch":
-      return <MessageSquareText className="size-8 stroke-gray-700 dark:stroke-gray-300" />
+      return <MessageSquareText className="size-8 stroke-slate-700 dark:stroke-slate-300" />
     default:
       return null
   }

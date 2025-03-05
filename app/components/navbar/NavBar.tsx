@@ -54,7 +54,7 @@ export default function NavBar() {
         ))}
       </nav>
 
-      <button onClick={toggleLanguage} className="md:absolute left-0 m-0 md:m-2 flex p-2 border dark:border-gray-600 rounded-lg shadow-md hover:bg-gray-500/5 transition-colors duration-200 ease-in-out">
+      <button onClick={toggleLanguage} className="md:absolute left-0 m-0 md:m-2 flex p-2 border dark:border-slate-600 rounded-lg shadow-md hover:bg-slate-500/5 transition-colors duration-200 ease-in-out">
         <Languages />
       </button>
 
@@ -62,7 +62,7 @@ export default function NavBar() {
       <NavModal />
 
       <div className="md:absolute right-0 m-0 md:m-2">
-        <ThemeSwitch userPreference={userPrefs.theme} className="border rounded-lg dark:border-gray-600 hover:bg-gray-500/5 transition-colors duration-200 ease-in-out shadow-md" />
+        <ThemeSwitch userPreference={userPrefs.theme} className="border rounded-lg dark:border-slate-600 hover:bg-slate-500/5 transition-colors duration-200 ease-in-out shadow-md" />
       </div>
     </motion.div>
   )
