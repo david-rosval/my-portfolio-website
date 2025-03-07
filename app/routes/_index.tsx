@@ -22,18 +22,6 @@ function Index() {
         <Portfolio />
       </div>
     </InitialAnimationProvider>
-    /* <div className="bg-gradient-to-b from-palette-2 to-palette-1">
-      <div className="max-w-[1300px] mx-auto">
-        <Hero />
-        <p className="text-red-700 dark:text-yellow-300">probando</p>
-      </div>
-    </div>
-    <div className="bg-palette-1">
-      <div className="max-w-[1200px] mx-auto">
-        <Projects />
-        <AboutMe />
-      </div>
-    </div> */
   )
 }
 

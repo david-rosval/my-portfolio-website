@@ -35,7 +35,6 @@ export default function HeroAlter() {
           <div className="block md:hidden">
             <TextCircleAnim initAnim={initAnim} />
           </div>
-
           
           <HeroDescriptionAnim initAnim={initAnim} languageIndex={languageIndex} />
           
