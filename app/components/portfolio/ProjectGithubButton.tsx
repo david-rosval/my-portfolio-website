@@ -9,12 +9,13 @@ const MotionLink = motion.create(Link)
 
 const githubButton = ["Ir al Repositorio", "Go to Repository"]
 
-export default function ProjectGithubButton({ languageIndex }: {languageIndex: number }) {
+export default function ProjectGithubButton({ languageIndex, to }: {languageIndex: number, to: string }) {
   const [githubBtnIsHovered, setGithubBtnIsHovered] = useState(false)
   
   return (
     <MotionLink
-      className="inline-flex ml-auto w-fit p-3 rounded-full items-center gap-2 transition-all ease-linear duration-300 hover:bg-blue-600 dark:hover:bg-blue-600"
+      to={to}
+      className="inline-flex ml-auto w-fit p-3 rounded-full items-center gap-2 transition-all ease-linear duration-300 bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 dark:hover:bg-blue-600"
       onMouseEnter={() => setGithubBtnIsHovered(true)}
       onMouseLeave={() => setGithubBtnIsHovered(false)}
     >

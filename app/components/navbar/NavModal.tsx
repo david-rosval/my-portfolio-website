@@ -3,6 +3,7 @@ import { Link } from "@remix-run/react"
 import { BookOpenText, Laugh, Menu, MessageSquareText, X } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 import { navBarLinks } from "../../consts"
+import useLanguage from "~/hooks/useLanguage"
 
 const MotionMenu = motion.create(Menu)
 const MotionX = motion.create(X)
@@ -28,7 +29,7 @@ export default function NavModal() {
   return (
     <>
       <button 
-        className="border rounded-lg dark:border-slate-600 hover:bg-slate-500/5 transition-colors duration-200 ease-in-out p-2 flex md:hidden justify-center shadow-md"
+        className="border rounded-lg bg-slate-100 dark:border-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors duration-200 ease-in-out p-2 flex md:hidden justify-center shadow-md"
         onMouseDown={() => setModal(!modal)}
       >
         <AnimatePresence mode="wait">
@@ -49,6 +50,7 @@ export default function NavModal() {
 }
 
 const MenuDialog = ({ modal, setModal }: { modal: boolean, setModal: React.Dispatch<React.SetStateAction<boolean>> }) => {
+  const { languageIndex } = useLanguage()
   const dialogRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -65,30 +67,26 @@ const MenuDialog = ({ modal, setModal }: { modal: boolean, setModal: React.Dispa
   
   return (
       <motion.nav 
-        className="absolute md:hidden top-0 w-full rounded-xl p-4 grid grid-cols-3 gap-2 z-30" 
+        className="absolute md:hidden top-0 rounded-lg mt-4 flex flex-col z-30 bg-red-500  overflow-hidden" 
         ref={dialogRef}
         initial={{ opacity: 0, top: "60%" }}
         animate={{ opacity: 1, top: "80%" }}
         exit={{ opacity: 0, top: "60%" }}
-        transition={{
-          duration: 0.3
-        }}
+        transition={{ duration: 0.3 }}
       >
         {navBarLinks.map((navBarLink) => (
           <motion.button
             key={navBarLink.name[1]}
-            whileTap={{
-              scale: 0.9
-            }}
+            whileTap={{ scale: 0.9 }}
             onAnimationComplete={() => setModal(false)}
           >
             <Link 
               to={navBarLink.to}
-              className="text-xs flex flex-col gap-1 items-center border dark:border-slate-500 rounded-xl p-2 shadow-md bg-white dark:bg-slate-800"
+              className="flex flex-col gap-2 items-center p-2 bg-slate-200 dark:bg-slate-700"
             >
               <NavLinkIcon navBarLink={navBarLink.name[1]} />
-              <span className="text-wrap">
-                {navBarLink.name[0]}
+              <span className="text-wrap leading-none">
+                {navBarLink.name[languageIndex]}
               </span>
             </Link>
           </motion.button>

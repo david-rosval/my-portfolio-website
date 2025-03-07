@@ -5,7 +5,6 @@ import { useRequestInfo } from "../utils/request-info";
 import { setTheme } from "../utils/theme.server";
 import { LaptopMinimal, Moon, Sun } from "lucide-react";
 import clsx from "clsx";
-import { motion } from "motion/react";
 
 
 export function useTheme() {
@@ -47,33 +46,15 @@ export function ThemeSwitch({
       ? "dark" 
       : "system"
 
-  
-
-  const MotionSun = motion.create(Sun)
-  const MotionMoon = motion.create(Moon)
-  const MotionLaptopMinimal = motion.create(LaptopMinimal)
-
- /*  const anim = {
-    exit: {
-      opacity: 0
-    },
-    animate: {
-      opacity: 1
-    },
-    initial: {
-      opacity: 0
-    }
-  } */
-
   const modeLabel = {
     light: (
-      <MotionSun />
+      <Sun />
     ),
     dark: (
-      <MotionMoon />
+      <Moon />
     ),
     system: (
-      <MotionLaptopMinimal />
+      <LaptopMinimal />
     )
   }
 

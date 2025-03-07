@@ -1,30 +1,26 @@
 import {motion} from "motion/react"
 import { Link } from "@remix-run/react";
-import { useRequestInfo } from "~/utils/request-info";
-import { ThemeSwitch } from "~/routes/resources.theme-switch";
 
-import NavModal from "./NavModal";
 import { useState } from "react";
 import { navBarLinks } from "~/consts";
-import { Languages } from "lucide-react";
 import useLanguage from "~/hooks/useLanguage";
+import LanguageSelection from "./LanguageSelection";
+import ThemeSelection from "./ThemeSelection";
+import NavSelection from "./NavSelection";
 
 
 const MotionLink = motion.create(Link)
 
 export default function NavBar() {
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const { userPrefs } = useRequestInfo()
-  const { language, setLanguage }= useLanguage()
+  const { language }= useLanguage()
+  const languageIndex = language === "en" ? 1 : 0
 
-  const toggleLanguage = () => {
-    if (language === "es") setLanguage("en")
-    if (language === "en") setLanguage("es")
-  }
+
 
   return (
     <motion.div 
-      className="w-full min-h-14 z-30 fixed top-0 flex justify-center gap-2 md:gap-0 items-center backdrop-blur-lg"
+      className="w-full min-h-14 z-30 fixed top-0 flex justify-center gap-2 md:gap-0 items-center md:backdrop-blur-lg bg-gradient-to-b from-slate-600/20 to-transparent"
       initial={{ top: -30, opacity: 0 }}
       animate={{ top: 0, opacity: 1, transition: { delay: 0.8, duration: 0.3 } }}
     >
@@ -49,21 +45,17 @@ export default function NavBar() {
               }
             }}
           >
-            {navBarLink.name[0]}
+            {navBarLink.name[languageIndex]}
           </MotionLink>
         ))}
       </nav>
 
-      <button onClick={toggleLanguage} className="md:absolute left-0 m-0 md:m-2 flex p-2 border dark:border-slate-600 rounded-lg shadow-md hover:bg-slate-500/5 transition-colors duration-200 ease-in-out">
-        <Languages />
-      </button>
+      <LanguageSelection />
+      
+      <NavSelection /> {/* On mobiles */}
 
-      {/* On mobiles */}
-      <NavModal />
-
-      <div className="md:absolute right-0 m-0 md:m-2">
-        <ThemeSwitch userPreference={userPrefs.theme} className="border rounded-lg dark:border-slate-600 hover:bg-slate-500/5 transition-colors duration-200 ease-in-out shadow-md" />
-      </div>
+      <ThemeSelection />
+      
     </motion.div>
   )
 }

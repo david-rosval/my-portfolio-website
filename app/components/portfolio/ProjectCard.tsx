@@ -22,8 +22,10 @@ const ProjectCard = ({
       whileInView={{ opacity: 1, transition: { duration: 1 }}}
       viewport={{ once: true }}
     >
-      <div className="image-t-transparent-gradient w-full h-[20%] opacity-25 absolute bottom-0 bg-profile-dots" />
-      <div className="w-full h-[7rem] bg-cover bg-left-top image-b-transparent-gradient rounded-t-lg" style={{
+
+      <div className="image-t-transparent-gradient w-full h-[20%] opacity-25 absolute bottom-0 bg-profile-dots pointer-events-none" /> {/* dot pattern bottom with gradient */}
+
+      <div className="w-full h-[8rem] bg-cover bg-left-top image-b-transparent-gradient rounded-t-lg" style={{
         backgroundImage: `url(${project.image})`,
       }} />
       <div className="p-4 flex flex-col gap-5 h-full z-10">
@@ -37,7 +39,7 @@ const ProjectCard = ({
               <ProjectTitle title={project.title[languageIndex]} />
               <p className="opacity-85 text-sm">{project.description[languageIndex]}</p>
             </div>
-            <ProjectGithubButton languageIndex={languageIndex} />
+            <ProjectGithubButton to={project.github} languageIndex={languageIndex} />
           </div>
         </div>
       </div>

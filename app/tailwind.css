@@ -55,6 +55,7 @@ body {
     background-size: 12.55px 12.55px;
   }
 }
+
 @media (min-width: 1024px) { /* lg */
   .bg-profile-dots {
     background-image: radial-gradient(

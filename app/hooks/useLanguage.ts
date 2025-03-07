@@ -6,5 +6,6 @@ export default function useLanguage() {
   if (!languageContext) {
     throw new Error("useLanguage must be used inside a LanguageProvider");
   }
-  return languageContext
+  const languageIndex = languageContext.language === "en" ? 1 : 0
+  return { ...languageContext, languageIndex }
 }
